@@ -1,0 +1,2 @@
+# List of required packages (Dependencies)
+pyTelegramBotAPI==3.5.1
