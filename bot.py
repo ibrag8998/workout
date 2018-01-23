@@ -347,7 +347,7 @@ def teach_dynamics3(message):
 	elif message.text == 'Отмена тренировки':
 		bot.send_message(message.chat.id, 'Надеюсь, у тебя уважительная причина', reply_markup = main_kb)
 	elif message.text == 'Сделано!':
-		bot.send_message(chatid, '123456')
+		bot.send_message(chatid, '123456'
 		if states[uid] == 'sklepka_t_skills2':
 			bot.send_message(chatid, out_workout.t_skills['sklepka'][2], reply_markup = done_kb)
 			states[uid] = 'sklepka_t_skills3'
