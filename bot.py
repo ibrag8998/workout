@@ -264,42 +264,42 @@ def teach_dynamics1(message):
 		bot.send_message(message.chat.id, 'Чем могу быть полезен?', reply_markup = done_kb)
 	elif message.text == '1':
 		bot.send_message(message.chat.id, out_workout.t_skills['sklepka'][0], reply_markup = done_kb)
-		states[uid] = 'sklepka_t_skills1'
+		states[uid] = 'sklepka_t_dyn1'
 	elif message.text == '2':
 		bot.send_message(message.chat.id, out_workout.t_skills['chair'][0], reply_markup = done_kb)
-		states[uid] = 'chair_t_skills1'
+		states[uid] = 'chair_t_dyn1'
 	elif message.text == '3':
 		bot.send_message(message.chat.id, out_workout.t_skills['under_bar'][0], reply_markup = done_kb)
-		states[uid] = 'under_bar_t_skills1'
+		states[uid] = 'under_bar_t_dyn1'
 	elif message.text == '4':
 		bot.send_message(message.chat.id, out_workout.t_skills['sun'][0], reply_markup = done_kb)
-		states[uid] = 'sun_t_skills1'
+		states[uid] = 'sun_t_dyn1'
 	elif message.text == '5':
 		bot.send_message(message.chat.id, out_workout.t_skills['ganger'][0], reply_markup = done_kb)
-		states[uid] = 'ganger_t_skills1'
+		states[uid] = 'ganger_t_dyn1'
 	elif message.text == '6':
 		bot.send_message(message.chat.id, out_workout.t_skills['360'][0], reply_markup = done_kb)
-		states[uid] = '360_t_skills1'
+		states[uid] = '360_t_dyn1'
 	elif message.text == '7':
 		bot.send_message(message.chat.id, out_workout.t_skills['540'][0], reply_markup = done_kb)
-		states[uid] = '540_t_skills1'
+		states[uid] = '540_t_dyn1'
 	elif message.text == '8':
 		bot.send_message(message.chat.id, out_workout.t_skills['shrimpflip'][0], reply_markup = done_kb)
-		states[uid] = 'shrimpflip_t_skills1'
+		states[uid] = 'shrimpflip_t_dyn1'
 	elif message.text == '9':
 		bot.send_message(message.chat.id, out_workout.t_skills['korbut'][0], reply_markup = done_kb)
-		states[uid] = 'korbut_t_skills1'
+		states[uid] = 'korbut_t_dyn1'
 	elif message.text == '10':
 		f = open('lach_gainer.mp4', 'rb')
 		bot.send_video(message.chat.id, f, reply_markup = done_kb)
 		f.close()
 		bot.send_message(message.chat.id, out_workout.t_skills['lach_gainer'][0], reply_markup = done_kb)
-		states[uid] = 'lach_gainer_t_skills1'
+		states[uid] = 'lach_gainer_t_dyn1'
 	else:
 		bot.send_message(message.chat.id, out_workout.supported_commands, reply_markup = main_kb)
 
 @bot.message_handler(func = lambda message: message.from_user.id in states 
-	and 't_skills1' in states[message.from_user.id])
+	and 't_dyn1' in states[message.from_user.id])
 def teach_dynamics2(message):
 	uid = message.from_user.id
 	chatid = message.chat.id
@@ -308,37 +308,37 @@ def teach_dynamics2(message):
 	elif message.text == 'Отмена тренировки':
 		bot.send_message(message.chat.id, 'Надеюсь, у тебя уважительная причина', reply_markup = main_kb)
 	elif message.text == 'Сделано!':
-		if states[uid] == 'sklepka_t_skills1':
+		if states[uid] == 'sklepka_t_dyn1':
 			bot.send_message(chatid, out_workout.t_skills['sklepka'][1], reply_markup = done_kb)
-			states[uid] = 'sklepka_t_skills2'
-		elif states[uid] == 'chair_t_skills1':
+			states[uid] = 'sklepka_t_dyn2'
+		elif states[uid] == 'chair_t_dyn1':
 			bot.send_message(chatid, out_workout.t_skills['chair'][1], reply_markup = done_kb)
-			states[uid] = 'chair_t_skills2'
-		elif states[uid] == 'under_bar_t_skills1':
+			states[uid] = 'chair_t_dyn2'
+		elif states[uid] == 'under_bar_t_dyn1':
 			bot.send_message(chatid, out_workout.t_skills['under_bar'][1], reply_markup = done_kb)
-			states[uid] = 'under_bar_t_skills2'
-		elif states[uid] == 'sun_t_skills1':
+			states[uid] = 'under_bar_t_dyn2'
+		elif states[uid] == 'sun_t_dyn1':
 			bot.send_message(chatid, 'Отлично!', reply_markup = main_kb)
-		elif states[uid] == 'ganger_t_skills1':
+		elif states[uid] == 'ganger_t_dyn1':
 			bot.send_message(chatid, out_workout.t_skills['ganger'][1], reply_markup = done_kb)
-			states[uid] = 'ganger_t_skills2'
-		elif states[uid] == '360_t_skills1':
+			states[uid] = 'ganger_t_dyn2'
+		elif states[uid] == '360_t_dyn1':
 			bot.send_message(chatid, out_workout.t_skills['360'][1], reply_markup = done_kb)
-			states[uid] = '360_t_skills2'
-		elif states[uid] == '540_t_skills1':
+			states[uid] = '360_t_dyn2'
+		elif states[uid] == '540_t_dyn1':
 			bot.send_message(chatid, out_workout.t_skills['540'][1], reply_markup = done_kb)
-			states[uid] = '540_t_skills2'
-		elif states[uid] == 'korbut_t_skills1':
+			states[uid] = '540_t_dyn2'
+		elif states[uid] == 'korbut_t_dyn1':
 			bot.send_message(chatid, out_workout.t_skills['korbut'][1], reply_markup = done_kb)
-			states[uid] = 'korbut_t_skills2'
-		elif states[uid] == 'lach_gainer_t_skills1':
+			states[uid] = 'korbut_t_dyn2'
+		elif states[uid] == 'lach_gainer_t_dyn1':
 			bot.send_message(chatid, out_workout.t_skills['lach_gainer'][1], reply_markup = done_kb)
-			states[uid] = 'lach_gainer_t_skills2'
+			states[uid] = 'lach_gainer_t_dyn2'
 	else:
 		bot.send_message(message.chat.id, out_workout.supported_commands, reply_markup = main_kb)
 
 @bot.message_handler(func = lambda message: message.from_user.id in states 
-	and 't_skills2' in states[message.from_user.id])
+	and 't_dyn2' in states[message.from_user.id])
 def teach_dynamics3(message):
 	uid = message.from_user.id
 	chatid = message.chat.id
@@ -347,36 +347,35 @@ def teach_dynamics3(message):
 	elif message.text == 'Отмена тренировки':
 		bot.send_message(message.chat.id, 'Надеюсь, у тебя уважительная причина', reply_markup = main_kb)
 	elif message.text == 'Сделано!':
-		bot.send_message(chatid, '123456'
-		if states[uid] == 'sklepka_t_skills2':
+		if states[uid] == 'sklepka_t_dyn2':
 			bot.send_message(chatid, out_workout.t_skills['sklepka'][2], reply_markup = done_kb)
-			states[uid] = 'sklepka_t_skills3'
-		elif states[uid] == 'chair_t_skills2':
+			states[uid] = 'sklepka_t_dyn3'
+		elif states[uid] == 'chair_t_dyn2':
 			bot.send_message(chatid, out_workout.t_skills['chair'][2], reply_markup = done_kb)
-			states[uid] = 'chair_t_skills3'
-		elif states[uid] == 'under_bar_t_skills2':
+			states[uid] = 'chair_t_dyn3'
+		elif states[uid] == 'under_bar_t_dyn2':
 			bot.send_message(chatid, out_workout.t_skills['under_bar'][2], reply_markup = done_kb)
-			states[uid] = 'under_bar_t_skills3'
-		elif states[uid] == 'ganger_t_skills2':
+			states[uid] = 'under_bar_t_dyn3'
+		elif states[uid] == 'ganger_t_dyn2':
 			bot.send_message(chatid, out_workout.t_skills['ganger'][2], reply_markup = done_kb)
-			states[uid] = 'ganger_t_skills3'
-		elif states[uid] == '360_t_skills2':
+			states[uid] = 'ganger_t_dyn3'
+		elif states[uid] == '360_t_dyn2':
 			bot.send_message(chatid, out_workout.t_skills['360'][2], reply_markup = done_kb)
-			states[uid] = '360_t_skills3'
-		elif states[uid] == '540_t_skills2':
+			states[uid] = '360_t_dyn3'
+		elif states[uid] == '540_t_dyn2':
 			bot.send_message(chatid, out_workout.t_skills['540'][2], reply_markup = done_kb)
-			states[uid] = '540_t_skills3'
-		elif states[uid] == 'korbut_t_skills2':
+			states[uid] = '540_t_dyn3'
+		elif states[uid] == 'korbut_t_dyn2':
 			bot.send_message(chatid, out_workout.t_skills['korbut'][2], reply_markup = done_kb)
-			states[uid] = 'korbut_t_skills3'
-		elif states[uid] == 'lach_gainer_t_skills2':
+			states[uid] = 'korbut_t_dyn3'
+		elif states[uid] == 'lach_gainer_t_dyn2':
 			bot.send_message(chatid, out_workout.t_skills['lach_gainer'][2], reply_markup = done_kb)
-			states[uid] = 'lach_gainer_t_skills3'
+			states[uid] = 'lach_gainer_t_dyn3'
 	else:
 		bot.send_message(message.chat.id, out_workout.supported_commands, reply_markup = main_kb)
 
 @bot.message_handler(func = lambda message: message.from_user.id in states 
-	and 't_skills3' in states[message.from_user.id])
+	and 't_dyn3' in states[message.from_user.id])
 def teach_dynamics4(message):
 	uid = message.from_user.id
 	chatid = message.chat.id
@@ -385,7 +384,7 @@ def teach_dynamics4(message):
 	elif message.text == 'Отмена тренировки':
 		bot.send_message(message.chat.id, 'Надеюсь, у тебя уважительная причина', reply_markup = main_kb)
 	elif message.text == 'Сделано!':
-		bot.send_message(chatid, 'Поздравляю!', reply_markup = done_kb)		
+		bot.send_message(chatid, 'Поздравляю!', reply_markup = main_kb)		
 	else:
 		bot.send_message(message.chat.id, out_workout.supported_commands, reply_markup = main_kb)
 
