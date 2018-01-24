@@ -6,7 +6,7 @@ from time import sleep, time
 
 bot = TeleBot(config_workout.token)
 
-states = dict() # состояние юзверя ----------------------------------------------------------------
+states = dict() # состояние юзера -----------------------------------------------------------------
 
 main_kb = types.ReplyKeyboardMarkup(resize_keyboard = True)
 main_kb.row('/teach', '/train')
