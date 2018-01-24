@@ -4,7 +4,7 @@ import out_workout
 from telebot import TeleBot, types
 from time import sleep, time
 
-bot = TeleBot(config_workout.token)
+bot = TeleBot(TOKEN)
 
 states = dict() # состояние юзера -----------------------------------------------------------------
 
